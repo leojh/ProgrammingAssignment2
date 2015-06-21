@@ -1,3 +1,6 @@
+#creates a cachable matrix to find its inverse
+#takes a matrix as an input
+#outputs the cachable matrix
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
         set <- function(y) {
@@ -11,6 +14,9 @@ makeCacheMatrix <- function(x = matrix()) {
         list(set = set, get = get, setsolve = setsolve, getsolve = getsolve)
 }
 
+#calls the cachable matrix to find its inverse and cache
+#takes a cachable matrix 
+#outputs the inverse of the matrix
 cacheSolve <- function(x, ...) {
         m <- x$getsolve()
         if (!is.null(m)) {
